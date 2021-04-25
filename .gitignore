@@ -1,0 +1,7 @@
+
+/.idea/
+/LibraryApplication.iml
+**/target/
+\.gradle/
+\.gradle_cache/
+**/build/

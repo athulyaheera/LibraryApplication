@@ -1,0 +1,1 @@
+insert into book values (1012,'B001','Dummy','YES');
