@@ -26,5 +26,14 @@ Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/
 mvn spring-boot:run
 ```
 
-# Library App
+Docker can also be used to run the application 
+```shell
+docker run -p="8000:80" library-app
+```
+
+
+##Swagger
+API documentation is available at http://localhost:8080/swagger-ui.html#
+
+
 
