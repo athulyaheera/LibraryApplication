@@ -28,7 +28,7 @@ public class LibraryController {
 	@Autowired
     private ModelMapper modelMapper;
 
-	@CrossOrigin
+
 	@GetMapping(path="/viewBooks", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ApiOperation(value="View Books Available in Library",
 	response = BookDto.class)
@@ -39,7 +39,7 @@ public class LibraryController {
 		
 	}
 	
-	@CrossOrigin
+
 	@PostMapping(path="/addBook",consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ApiOperation(value="Add Book to library",
 			response = Book.class)
@@ -47,7 +47,7 @@ public class LibraryController {
 		return libraryService.addBook(convertToEntity(book));
 	}
 	
-	@CrossOrigin
+
 	@PostMapping(path="/borrowBook",consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ApiOperation(value="Borrow books from library",
 			response = Book.class)
@@ -55,7 +55,7 @@ public class LibraryController {
 		return libraryService.borrowBook(convertToEntity(registerDto));
 	}
 	
-	@CrossOrigin
+
 	@PostMapping(path="/addUser",consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ApiOperation(value="Add users to library",
 			response = Book.class)
@@ -65,7 +65,7 @@ public class LibraryController {
 
 	}
 	
-	@CrossOrigin
+
 	@PostMapping(path="/returnBook",consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ApiOperation(value="Return books to library",
 			response = Book.class)
@@ -74,7 +74,7 @@ public class LibraryController {
 		return new ResponseEntity<>(convertToDto(libraryService.returnBook(convertToEntity(registerDto))),HttpStatus.CREATED);
 	}
 	
-	@CrossOrigin
+
 	@GetMapping(path="/viewBorrowedBooks", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ApiOperation(value="View borrowed books of the user",
 			notes = "Give the user name",
@@ -89,7 +89,7 @@ public class LibraryController {
 	private BookDto convertToDto(Book book) {
 		return modelMapper.map(book, BookDto.class);
 	}
-	
+
 	private Book convertToEntity(BookDto bookDto){
 		return modelMapper.map(bookDto, Book.class);
 	}
